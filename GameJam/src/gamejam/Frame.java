@@ -1,23 +1,52 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gamejam;
 
-/**
- *
- * @author Oliva-chan
- */
+import java.util.Random;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
+
 public class Frame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Frame
-     */
+   
+    GameJam game = new GameJam();
+    Random rad = new Random();
+    Problem theProblem = new Problem(rad.nextInt(2));
+    int points =0;
+     
+            
+    
     public Frame() {
         initComponents();
+        Problem_Tittle.setText(theProblem.toStrings());
+        jButton1.setText(theProblem.getAn1()); 
+        jButton2.setText(theProblem.getAn2());
+        jButton3.setText(theProblem.getAn3());
+        
+       whileVisible();
     }
 
+    public void whileVisible(){
+        start.setVisible(true);
+        email.setVisible(false);
+        nameOfEmployee.setVisible(false);
+        jButton1.setVisible(false);
+        jButton2.setVisible(false);
+        jButton3.setVisible(false);
+        client.setVisible(false);
+        details.setVisible(false);
+        Problem_Tittle.setVisible(false);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,40 +56,112 @@ public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        last = new javax.swing.JLabel();
+        nameOfEmployee = new javax.swing.JLabel();
+        client = new javax.swing.JLabel();
+        details = new javax.swing.JLabel();
+        Problem_Tittle = new javax.swing.JLabel();
+        email = new javax.swing.JLabel();
+        ok = new javax.swing.JLabel();
+        start = new javax.swing.JLabel();
+        Last = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("Hducklsd\\");
-            getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, -1, -1));
+        jButton1.setText("Answer 1");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 730, 40));
 
-            jTextArea1.setColumns(20);
-            jTextArea1.setRows(5);
-            jScrollPane1.setViewportView(jTextArea1);
+        jButton2.setText("Answer 2");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 730, 40));
 
-            getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 490, 260));
+        jButton3.setText("Answer 3");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 730, 40));
 
-            jButton1.setText("jButton1");
-            getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, -1, -1));
+        nameOfEmployee.setBackground(new java.awt.Color(51, 51, 51));
+        nameOfEmployee.setFont(new java.awt.Font("Menlo", 0, 20)); // NOI18N
+        nameOfEmployee.setForeground(new java.awt.Color(204, 0, 204));
+        nameOfEmployee.setText("name");
+        nameOfEmployee.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(nameOfEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 180, -1));
+        nameOfEmployee.getAccessibleContext().setAccessibleName("noAnActualName");
 
-            jButton2.setText("jButton2");
-            getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 480, -1, -1));
+        getContentPane().add(client, new org.netbeans.lib.awtextra.AbsoluteConstraints(625, 156, 160, 160));
 
-            jButton3.setText("jButton3");
-            getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, -1, -1));
+        details.setText("detailsssssssssss");
+        getContentPane().add(details, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, -1));
 
-            last.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GGJ.png"))); // NOI18N
-            getContentPane().add(last, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
+        Problem_Tittle.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
+        Problem_Tittle.setForeground(new java.awt.Color(223, 183, 33));
+        Problem_Tittle.setText("Problem");
+        Problem_Tittle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(Problem_Tittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 390, 30));
 
-            pack();
-        }// </editor-fold>//GEN-END:initComponents
+        email.setIcon(new javax.swing.ImageIcon(getClass().getResource("/email.jpg"))); // NOI18N
+        getContentPane().add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, -1, -1));
+
+        ok.setText(" ");
+        ok.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                okMouseClicked(evt);
+            }
+        });
+        getContentPane().add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 450));
+
+        start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/start.png"))); // NOI18N
+        start.setText(" ");
+        getContentPane().add(start, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 180));
+
+        Last.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desktop.jpg"))); // NOI18N
+        getContentPane().add(Last, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 450));
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        client.setIcon(new ImageIcon("c2.png"));
+      
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+       client.setIcon(new ImageIcon("c25.png")); 
+    
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    JOptionPane.showMessageDialog(null, "im dissapointed ", 
+                                    "mad boss lol ", 0, 
+                                    new ImageIcon("roary.gif"));
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void okMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_okMouseClicked
+       start.setVisible(false);
+        email.setVisible(true);
+        nameOfEmployee.setVisible(true);
+        jButton1.setVisible(true);
+        jButton2.setVisible(true);
+        jButton3.setVisible(true);
+        client.setVisible(true);
+        details.setVisible(true);
+        Problem_Tittle.setVisible(true);
+    }//GEN-LAST:event_okMouseClicked
 
     /**
      * @param args the command line arguments
@@ -92,18 +193,26 @@ public class Frame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame().setVisible(true);
+                Frame frame =new Frame();
+                frame.setVisible(true);
+                frame.setResizable(false);
+                
+                
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Last;
+    private javax.swing.JLabel Problem_Tittle;
+    private javax.swing.JLabel client;
+    private javax.swing.JLabel details;
+    private javax.swing.JLabel email;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel last;
+    private javax.swing.JLabel nameOfEmployee;
+    private javax.swing.JLabel ok;
+    private javax.swing.JLabel start;
     // End of variables declaration//GEN-END:variables
 }
