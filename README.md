@@ -7,7 +7,5 @@ You are starting your internship as a IT Help Desk Technician at FIU! You will r
 
 
 Install Instructions:
-Windows:
-Unzip the "PantherIT.zip" file, and open the new folder. Then run the exe! Enjoy!
 
-MacOS:
+Unzip the "PantherIT.zip" file, and open the new folder. Then run the exe! Enjoy!
